@@ -4,6 +4,8 @@ Gem::Specification.new do |s|
   s.name = %q{auto_tagger}
 
   s.version = AutoTagger::VERSION
+  MAX_CAPISTRANO_VERSION = "2.15.5"
+  MIN_CAPISTRANO_VERSION = "2.5.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Dean", "Brian Takita", "Mike Grafton", "Bruce Krysiak", "Pat Nakajima", "Jay Zeschin", "Mike Barinek", "Sarah Mei", "Mike Dalessio", "Dave Yeu", "Rachel Heaton", "Oren Weichselbaum"]
@@ -24,12 +26,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<capistrano>, [">= 2.5.3", "<=2.14.2"])
+      s.add_runtime_dependency(%q<capistrano>, [">= #{MIN_CAPISTRANO_VERSION}", "<= #{MAX_CAPISTRANO_VERSION}"])
     else
-      s.add_dependency(%q<capistrano>, [">= 2.5.3", "<=2.14.2"])
+      s.add_dependency(%q<capistrano>, [">= #{MIN_CAPISTRANO_VERSION}", "<= #{MAX_CAPISTRANO_VERSION}"])
     end
   else
-    s.add_dependency(%q<capistrano>, [">= 2.5.3", "<=2.14.2"])
+    s.add_dependency(%q<capistrano>, [">= #{MIN_CAPISTRANO_VERSION}", "<= #{MAX_CAPISTRANO_VERSION}"])
   end
 end
 
